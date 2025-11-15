@@ -1,0 +1,48 @@
+{
+  "moods": [
+    {
+      "id": "mhztj49s602mox",
+      "name": "happy",
+      "songs": [
+        "singari",
+        "leo",
+        "singari"
+      ]
+    },
+    {
+      "id": "mhzudogqq6zpw4",
+      "name": "sad",
+      "songs": [
+        "salambala"
+      ]
+    },
+    {
+      "id": "mhzumnu4ig4zr5",
+      "name": "chill",
+      "songs": [
+        "tvk"
+      ]
+    },
+    {
+      "id": "mhzvmx458fg6wa",
+      "name": "bad",
+      "songs": [
+        "rolex"
+      ]
+    },
+    {
+      "id": "mhzwe65rest264",
+      "name": "education",
+      "songs": [
+        "believer"
+      ]
+    },
+    {
+      "id": "mhzwq8icg4z8bm",
+      "name": "weekend song",
+      "songs": [
+        "sao paulo"
+      ]
+    }
+  ]
+}
