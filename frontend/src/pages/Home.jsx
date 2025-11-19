@@ -68,7 +68,7 @@ export default function Home() {
     fetchRecommendations(moodName);
   }
 
-  // ⭐ CORRECTED playPreview FUNCTION
+ 
   async function playPreview(songName) {
     try {
       const res = await fetch(
@@ -76,20 +76,20 @@ export default function Home() {
       );
       const data = await res.json();
 
-      // If preview exists → play it
+
       if (data.preview_url) {
         setPreview(prev => ({
           ...prev,
           [songName]: data.preview_url
         }));
       } else {
-        // No preview → save NO_PREVIEW
+
         setPreview(prev => ({
           ...prev,
           [songName]: "NO_PREVIEW"
         }));
 
-        // generate Spotify link
+
         if (data.track_id) {
           setSpotifyLinks(prev => ({
             ...prev,
