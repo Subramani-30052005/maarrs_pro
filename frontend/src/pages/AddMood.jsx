@@ -120,7 +120,7 @@ return (
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full py-5 bg-linear-to-r from-green-500 to-emerald-500 text-white rounded-2xl text-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
+          className="w-full py-5 bg-linear-to-r from-gray-500 to-gray-500 text-white rounded-2xl text-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
         >
           ✨ Create Mood
         </button>

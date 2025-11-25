@@ -20,7 +20,7 @@ export default function MoodCard({ mood, onDelete }) {
         </div>
 
         {/* Songs List */}
-        <div className="bg-white/50 backdrop-blur-sm rounded-xl p-4 mb-4 border border-purple-100 flex-1 max-h-32 overflow-y-auto">
+        <div className="bg-white/50 backdrop-blur-sm rounded-xl p-4 mb-4 border border-purple-200  max-h-24 overflow-y-auto">
   <ul className="space-y-2 text-gray-700">
     {mood.songs.map((s, i) => (
       <li key={i} className="flex items-center gap-2">
