@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import React, { useEffect, useState } from "react";
 import { API } from "../api";
 import MoodCard from "../components/MoodCard";
@@ -10,11 +11,17 @@ export default function Home() {
   const [preview, setPreview] = useState({});
   const [spotifyLinks, setSpotifyLinks] = useState({});
 
-  const navigate = useNavigate();
+const navigate = useNavigate();
 
-  async function load() {
+useEffect(() => {
+  if (!localStorage.getItem("token")) {
+    navigate("/login");
+  }
+}, [navigate]);
+
+async function load() {
     try {
-      const res = await API.get("/");
+      const res = await API.get("/api/moods");
       setMoods(res.data);
     } catch (err) {
       console.error(err);
@@ -22,26 +29,14 @@ export default function Home() {
   }
 
   useEffect(() => {
-    let mounted = true;
+  load();
+}, []);
 
-    (async () => {
-      try {
-        const res = await API.get("/");
-        if (mounted) setMoods(res.data);
-      } catch (err) {
-        console.error(err);
-      }
-    })();
-
-    return () => {
-      mounted = false;
-    };
-  }, []);
 
   async function handleDelete(id) {
     if (!confirm("Delete this mood?")) return;
     try {
-      await API.delete(`/${id}`);
+      await API.delete(`/api/moods${id}`);
       load();
     } catch (err) {
       console.error(err);
@@ -54,7 +49,7 @@ export default function Home() {
       return;
     }
     try {
-      const res = await API.get(`/recommendation/${moodName}`);
+      const res = await API.get(`/api/moods/recommendation/${moodName}`);
       setRecommended(res.data.recommended);
     } catch (err) {
       console.error(err);

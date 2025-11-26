@@ -22,7 +22,7 @@ export default function AddMood() {
       return
     }
     try {
-      await API.post('/', { name: name.trim(), songs })
+      await API.post('/api/moods', { name: name.trim(), songs })
       nav('/')
     } catch (err) {
       console.error(err)

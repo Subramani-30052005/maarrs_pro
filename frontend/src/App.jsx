@@ -3,6 +3,8 @@ import { Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home'
 import AddMood from './pages/AddMood'
 import EditMood from './pages/EditMood'
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 // import Recommend from './pages/Recommend'
 
 export default function App(){
@@ -14,6 +16,9 @@ export default function App(){
       </nav>
 
       <Routes>
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Home />} />
         <Route path="/add" element={<AddMood />} />
         <Route path="/edit/:id" element={<EditMood />} />
